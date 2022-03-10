@@ -1,4 +1,4 @@
-package co.com.sofka.technicalTest;
+package co.com.sofka.technical_test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

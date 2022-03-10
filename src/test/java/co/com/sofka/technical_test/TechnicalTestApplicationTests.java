@@ -1,4 +1,4 @@
-package co.com.sofka.technicalTest;
+package co.com.sofka.technical_test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
