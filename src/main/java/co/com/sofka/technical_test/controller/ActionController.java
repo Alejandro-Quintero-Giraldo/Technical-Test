@@ -3,13 +3,11 @@ package co.com.sofka.technical_test.controller;
 import co.com.sofka.technical_test.model.Action;
 import co.com.sofka.technical_test.service.ActionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/action")
 public class ActionController {
 
