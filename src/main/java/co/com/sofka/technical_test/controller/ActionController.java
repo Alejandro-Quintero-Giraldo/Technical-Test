@@ -18,7 +18,7 @@ public class ActionController {
 
     @GetMapping("/getMessage")
     public Mono<String>  getMessage(@RequestBody Action action){
-        System.out.println("entra al controller");
-        return actionService.findUserByUserName(action);
+        return actionService.findUserByUserName(action)
+                .map(Action::getMessage);
     }
 }
