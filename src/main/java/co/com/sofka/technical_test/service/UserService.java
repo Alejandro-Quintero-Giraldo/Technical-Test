@@ -28,6 +28,7 @@ public class UserService {
 
     public Mono<UserDTO> findById(String id){
         return userRepository.findById(id)
+                .switchIfEmpty(Mono.error(new IllegalArgumentException("El usuario no existe")))
                 .flatMap(userMapper::toDTO);
     }
 
