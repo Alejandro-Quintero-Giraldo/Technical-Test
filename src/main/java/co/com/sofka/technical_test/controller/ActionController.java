@@ -14,9 +14,14 @@ public class ActionController {
     @Autowired
     private ActionService actionService;
 
-    @GetMapping("/getMessage")
-    public Mono<String>  getMessage(@RequestBody Action action){
-        return actionService.findUserByUserName(action)
+    @GetMapping("/getMessage/{userId}/{userName}/{typeAction}/{languaje}")
+    public Mono<String>  getMessage(@PathVariable("userId") String userId,
+                                    @PathVariable("userName") String userName,
+                                    @PathVariable("typeAction") String typeAction,
+                                    @PathVariable("languaje") String languaje){
+
+        return Mono.just(new Action(userId,userName,languaje, typeAction, ""))
+                .flatMap(action -> actionService.findUserByUserName(action))
                 .map(Action::getMessage);
     }
 }
